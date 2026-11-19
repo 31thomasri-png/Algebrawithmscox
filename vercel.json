@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/site-2/:path*", "destination": "https://undertale-web-port-new-lek9.vercel.app/*" },
     { "source": "/site-3/:path*", "destination": "https://deltarunelandon.vercel.app*" }
   ]
 }
