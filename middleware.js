@@ -8,6 +8,17 @@ export default async function middleware(request) {
   const cookieName = 'site_auth_forever';
   const url = new URL(request.url);
 
+  // Handle Log Out button (?logout=1)
+  if (url.searchParams.get('logout') === '1') {
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: url.pathname,
+        'Set-Cookie': `${cookieName}=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0`,
+      },
+    });
+  }
+
   // 1. Keep them logged in forever (10 years) if cookie is present
   const cookies = request.headers.get('cookie') || '';
   if (cookies.includes(`${cookieName}=granted`)) {
