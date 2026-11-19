@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/site-3/:path*",
-      "destination": "https://vercel.app*"
+      "destination": "https://deltarunelandon.vercel.app*"
     }
   ]
 }
