@@ -1,8 +1,16 @@
 {
   "rewrites": [
     {
+      "source": "/site-3",
+      "destination": "https://vercel.app"
+    },
+    {
+      "source": "/site-3/",
+      "destination": "https://vercel.app"
+    },
+    {
       "source": "/site-3/:path*",
-      "destination": "https://deltarunelandon.vercel.app*"
+      "destination": "https://vercel.app:path*"
     }
   ]
 }
